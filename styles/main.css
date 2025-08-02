@@ -7,25 +7,40 @@
     list-style: none;
 }
 
+:root{
+    --primary: #009cfe;
+    --secondary: #70bbff;
+}
+
 body {
     font-family: Poppins, sans-serif;
 }
 
-header{
+header, footer{
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 60px;
     background-color: #222229d8;
     color: #fff;
     box-shadow: 0 0 10px 2px #00000050;
     backdrop-filter: blur(4px);
-    z-index: 100;
 }
 
-.iheader{
+header{
+    z-index: 100;
+    height: 60px;
+    position: fixed;
+    top: 0;
+}
+
+footer{
+    height: 240px;
+    bottom: 0;
+    left: 0;
+}
+
+.iheader, .ifooter{
     display: flex;
-    flex-direction: row;
     width: 120vh;
     padding: 0 20px;
     max-width: 100vw;
@@ -34,7 +49,14 @@ header{
     margin: 0 auto;
     color: #fff;
     justify-content: space-between;
+}
+
+.iheader{
     align-items: center;
+}
+
+.iheader, .ifooter{
+    flex-direction: row;
 }
 
 .logo h2{
@@ -44,14 +66,102 @@ header{
 }
 
 .iheader a{
-    color: #fff;
     font-weight: 300;
+    color: #fff;
+}
+
+.iheader nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .iheader nav a{
     margin-left: 25px;
+    color: #fff;
 }
 
-.iheader nav a:hover{
+.iheader nav span{
+    margin-left: 25px;
+}
+
+.ifooter nav a{
+    color: #aaa;
+    font-weight: 300;
+}
+
+.iheader nav a:hover, .ifooter nav a:hover{
     text-decoration: underline;
+}
+
+.ifooter nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.ifooter nav h4{
+    font-weight: 400;
+}
+
+main{
+    min-height: 95vh;
+    width: 120vh;
+    max-width: 100vw;
+    min-width: 30vw;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.demoimg{
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    margin: 0;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-content{
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.title-content span{
+    margin: 15px auto;
+}
+
+.title h1{
+    color: #fff;
+    font-size: 6vh;
+}
+
+.title h2{
+    color: #fff;
+    font-size: 4vh;
+    font-weight: 200;
+}
+
+.demoimg::before{
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../res/demo1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: top center;
+    filter: blur(0.5vh);
+    z-index: 1;
 }
